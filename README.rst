@@ -1,57 +1,42 @@
-## How to setup a Django project in a virtual environment:
+# How to setup a Django project in a virtual environment:
 
-Install virtualenv:
-```
+# 1. Install virtualenv:
+
 pip install virtualenv
-```
 
-Usage to set up a new virtual environment:
-```
+# 2. Usage to set up a new virtual environment:
+
 virtualenv ~/.envs/<project_name>
-```
 
-...or specify version of Python to use in virtual environment
-```
+# or specify version of Python to use in virtual environment
+
 virtualenv -p /usr/bin/python2.7 ~/.envs/<project_name>
-```
 
-To begin using the virtual environment, it needs to be activated:
-```
+# 3. To begin using the virtual environment, it needs to be activated:
+
 source ~/.envs/<project_name>/bin/activate
-```
 
-If you are done working in the virtual environment for the moment, you can deactivate it:
-```
+#	If you are done working in the virtual environment for the moment, you can deactivate it:
+
 deactivate
-```
 
-To delete a virtual environment, just delete its folder:
-```
+#	To delete a virtual environment, just delete its folder:
+
 rm -rf venv
-```
 
-Install Two Scoops Django template
-```
+# 4. install Two Scoops Django template
+django-admin.py startproject --template=https://github.com/twoscoops/django-twoscoops-project/zipball/master --extension=py,rst,html <my_site_name>
+# or my personal fork
 django-admin.py startproject --template=https://github.com/jbonfardeci/django-twoscoops-project/zipball/master --extension=py,rst,html <my_site_name>
-```
 
-Install requirements for local env: open <my_site_name>/requirements.txt, change "production.txt" to "local.txt", then run:
-```
+# 5. Install requirements for env: open <my_site_name>/requirements.txt, change "production.txt" to "local.txt"
+#	then run:
 pip install -r requirements
-```
 
-For MySQL database config you will have to run this to avoid error, "Command python setup.py egg_info failed with error code 1...":
-On Mac OS X run:
-```
+# for MySQL on Mac OSX run:
 export PATH=$PATH:/usr/local/mysql/bin
-```
 
-on Linux, run:
-```
+# on Linux:
 apt-get install libmysqlclient-dev python-dev
-```
 
-Then setp the Python MySQL driver:
-```
 pip install -MySQL-python
-```
