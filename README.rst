@@ -25,8 +25,10 @@ deactivate
 rm -rf venv
 
 # 4. install Two Scoops Django template
+
 django-admin.py startproject --template=https://github.com/jbonfardeci/django-twoscoops-project/zipball/master --extension=py,rst,html <my_site_name>
 
 # 5. Install requirements for local env: open <my_site_name>/requirements.txt, change "production.txt" to "local.txt"
 #	then run:
+
 pip install -r requirements
