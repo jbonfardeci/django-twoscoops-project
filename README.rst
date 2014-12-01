@@ -41,3 +41,7 @@ For Linux:
 apt-get install libmysqlclient-dev python-dev
 
 pip install -MySQL-python
+
+Then run:
+
+pip install mysql-python
